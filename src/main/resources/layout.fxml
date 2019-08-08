@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          prefHeight="576.0"
+          prefWidth="576.0"
+>
+    <Label styleClass="label" text="8" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label styleClass="label" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label styleClass="label" text="6" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label styleClass="label" text="5" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label styleClass="label" text="4" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Label styleClass="label" text="3" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Label styleClass="label" text="2" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Label styleClass="label" text="1" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <Label styleClass="label" text="A" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="B" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="C" GridPane.columnIndex="3" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="D" GridPane.columnIndex="4" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="E" GridPane.columnIndex="5" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="F" GridPane.columnIndex="6" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="G" GridPane.columnIndex="7" GridPane.rowIndex="8"/>
+    <Label styleClass="label" text="H" GridPane.columnIndex="8" GridPane.rowIndex="8"/>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/rook.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/knight.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="3" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/bishop.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="4" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/queen.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="5" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/king.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="6" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/bishop.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="7" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/knight.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="8" GridPane.rowIndex="0">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/rook.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="3" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="4" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="5" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="6" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="7" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="8" GridPane.rowIndex="1">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/black/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="2" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="3" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="4" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="5" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="6" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="7" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="8" GridPane.rowIndex="6">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/pawn.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="1" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/rook.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="2" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/knight.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="3" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/bishop.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="4" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/queen.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="5" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/king.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="6" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/bishop.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-black" GridPane.columnIndex="7" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/knight.png" />
+        </ImageView>
+    </Pane>
+
+    <Pane styleClass="square, bg-white" GridPane.columnIndex="8" GridPane.rowIndex="7">
+        <ImageView fitHeight="64" fitWidth="64">
+            <Image url="img/piece/white/rook.png" />
+        </ImageView>
+    </Pane>
+
+</GridPane>
