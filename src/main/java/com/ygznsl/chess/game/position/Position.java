@@ -2,8 +2,6 @@ package com.ygznsl.chess.game.position;
 
 import java.util.Objects;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 import com.ygznsl.chess.game.exception.InvalidPositionException;
 
 public class Position implements Comparable<Position>
