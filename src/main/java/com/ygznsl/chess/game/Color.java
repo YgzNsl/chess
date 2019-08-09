@@ -17,6 +17,11 @@ public enum Color
         return Objects.equals(invert(), color);
     }
 
+    public boolean isFriendOf(Color color)
+    {
+        return Objects.equals(this, color);
+    }
+
     public static Color getOpponentsColor(Color color)
     {
         return Objects.equals(WHITE, color) ? BLACK : WHITE;

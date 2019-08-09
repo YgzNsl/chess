@@ -1,7 +1,12 @@
 package com.ygznsl.chess.game.classic;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.ygznsl.chess.game.Bishop;
 import com.ygznsl.chess.game.Color;
+import com.ygznsl.chess.game.position.Direction;
+import com.ygznsl.chess.game.position.DirectionSequence;
 
 public class ClassicBishop extends Bishop
 {
@@ -12,63 +17,14 @@ public class ClassicBishop extends Bishop
     }
 
     @Override
-    protected boolean canMoveNorth()
+    protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return false;
-    }
-
-    @Override
-    protected boolean canMoveSouth()
-    {
-        return false;
-    }
-
-    @Override
-    protected boolean canMoveWest()
-    {
-        return false;
-    }
-
-    @Override
-    protected boolean canMoveEast()
-    {
-        return false;
-    }
-
-    @Override
-    protected boolean canMoveNorthWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveNorthEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveSouthWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveSouthEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveLMotion()
-    {
-        return false;
-    }
-
-    @Override
-    protected int getMoveCount()
-    {
-        return -1;
+        return Arrays.asList(
+                new DirectionSequence(-1, Direction.NORTH_WEST),
+                new DirectionSequence(-1, Direction.NORTH_EAST),
+                new DirectionSequence(-1, Direction.SOUTH_WEST),
+                new DirectionSequence(-1, Direction.SOUTH_EAST)
+        );
     }
 
 }

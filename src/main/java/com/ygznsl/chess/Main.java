@@ -1,5 +1,7 @@
 package com.ygznsl.chess;
 
+import com.ygznsl.chess.game.Board;
+import com.ygznsl.chess.game.Game;
 import com.ygznsl.chess.game.classic.ClassicGame;
 import com.ygznsl.chess.game.position.Position;
 
@@ -12,9 +14,9 @@ public final class Main
 
     public static void main(String[] args) throws Exception
     {
-        final ClassicGame game = new ClassicGame();
-        game.start();
-        game.move(new Position('A', 1), new Position('A', 5));
+        final Game game = new ClassicGame();
+        final Board board = game.getBoard();
+        board.getAvailableMoves(new Position('A', 1));
         System.out.println();
     }
 

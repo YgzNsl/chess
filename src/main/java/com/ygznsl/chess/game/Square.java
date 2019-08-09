@@ -1,7 +1,5 @@
 package com.ygznsl.chess.game;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Objects;
 
 import com.ygznsl.chess.game.position.Position;
@@ -52,35 +50,19 @@ public class Square
         return Objects.nonNull(occupant);
     }
 
-    public final boolean isBlack()
-    {
-        return Objects.equals(Color.BLACK, color);
-    }
-
     public final boolean isWhite()
     {
-        return Objects.equals(Color.WHITE, color);
+        return Color.WHITE == color;
+    }
+
+    public final boolean isBlack()
+    {
+        return Color.BLACK == color;
     }
 
     public final void clearOccupant()
     {
         setOccupant(null);
-    }
-
-    public final List<Piece> getThreateningPieces()
-    {
-        final LinkedList<Piece> pieces = new LinkedList<>();
-        final List<Piece> allPieces = board.getAllPieces();
-
-        for (Piece piece : allPieces)
-        {
-            if (piece.getThreatenedSquares().contains(this))
-            {
-                pieces.add(piece);
-            }
-        }
-
-        return pieces;
     }
 
     @Override

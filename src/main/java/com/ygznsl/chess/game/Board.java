@@ -1,5 +1,7 @@
 package com.ygznsl.chess.game;
 
+import static java.util.Objects.nonNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +9,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.ygznsl.chess.game.exception.EmptySquareException;
+import com.ygznsl.chess.game.exception.GameException;
+import com.ygznsl.chess.game.path.Path;
 import com.ygznsl.chess.game.position.Position;
 
 public abstract class Board
@@ -53,9 +58,65 @@ public abstract class Board
                 .collect(Collectors.toList());
     }
 
+    protected final void analyzeAvailablePaths(Piece piece, List<Path> paths)
+    {
+        for (final Path initialPath : paths)
+        {
+            Path path = initialPath;
+            Piece previous = null;
+            int index = 1;
+
+            while (nonNull(path))
+            {
+                if (nonNull(path.getExtendz()) && path.getExtendz().isBlocked())
+                    break;
+
+                final List<Position> steps = path.getSteps();
+                for (int i = index; i < steps.size(); i++)
+                {
+                    index++;
+
+                    if (nonNull(previous))
+                    {
+                        previous = null;
+                        path.setBlockedBy(previous);
+                        break;
+                    }
+
+                    final Position step = steps.get(i);
+                    final Square square = getSquare(step);
+
+                    if (square.isOccupied())
+                    {
+                        final Piece occupant = square.getOccupant();
+                        final boolean isOpponent = occupant
+                                .getColor()
+                                .isOpponentOf(piece.getColor());
+
+                        if (isOpponent)
+                        {
+                            previous = occupant;
+                        }
+                        else
+                        {
+                            previous = null;
+                            path.setBlockedBy(occupant);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        previous = null;
+                    }
+                }
+
+                path = path.getExtension();
+            }
+        }
+    }
+
     public final Square getSquare(Position position)
     {
-        Objects.requireNonNull(position);
         return squares[position.getVerticalIndex()][position.getHorizontalIndex()];
     }
 
@@ -76,6 +137,18 @@ public abstract class Board
         allPieces.addAll(getBlackPieces());
         allPieces.trimToSize();
         return allPieces;
+    }
+
+    public final List<Path> getAvailableMoves(Position position) throws GameException
+    {
+        final Square square = getSquare(position);
+        if (!square.isOccupied())
+            throw new EmptySquareException(square);
+
+        final Piece occupant = square.getOccupant();
+        final List<Path> allPaths = occupant.getAllPossiblePaths();
+        analyzeAvailablePaths(occupant, allPaths);
+        return allPaths;
     }
 
     protected abstract Map<Position, Piece> initializeBoard();

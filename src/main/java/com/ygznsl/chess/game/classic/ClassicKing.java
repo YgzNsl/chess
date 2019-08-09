@@ -1,8 +1,12 @@
 package com.ygznsl.chess.game.classic;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.ygznsl.chess.game.Color;
 import com.ygznsl.chess.game.King;
 import com.ygznsl.chess.game.position.Direction;
+import com.ygznsl.chess.game.position.DirectionSequence;
 
 public class ClassicKing extends King
 {
@@ -13,63 +17,18 @@ public class ClassicKing extends King
     }
 
     @Override
-    protected boolean canMoveNorth()
+    protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return !checkIfDirectionIsUnderKingThreat(Direction.NORTH);
-    }
-
-    @Override
-    protected boolean canMoveSouth()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.SOUTH);
-    }
-
-    @Override
-    protected boolean canMoveWest()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.WEST);
-    }
-
-    @Override
-    protected boolean canMoveEast()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.EAST);
-    }
-
-    @Override
-    protected boolean canMoveNorthWest()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.NORTH_WEST);
-    }
-
-    @Override
-    protected boolean canMoveNorthEast()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.NORTH_EAST);
-    }
-
-    @Override
-    protected boolean canMoveSouthWest()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.SOUTH_WEST);
-    }
-
-    @Override
-    protected boolean canMoveSouthEast()
-    {
-        return !checkIfDirectionIsUnderKingThreat(Direction.SOUTH_EAST);
-    }
-
-    @Override
-    protected boolean canMoveLMotion()
-    {
-        return false;
-    }
-
-    @Override
-    protected int getMoveCount()
-    {
-        return 1;
+        return Arrays.asList(
+                new DirectionSequence(1, Direction.NORTH),
+                new DirectionSequence(1, Direction.SOUTH),
+                new DirectionSequence(1, Direction.WEST),
+                new DirectionSequence(1, Direction.EAST),
+                new DirectionSequence(1, Direction.SOUTH_WEST),
+                new DirectionSequence(1, Direction.SOUTH_EAST),
+                new DirectionSequence(1, Direction.SOUTH_WEST),
+                new DirectionSequence(1, Direction.SOUTH_EAST)
+        );
     }
 
 }

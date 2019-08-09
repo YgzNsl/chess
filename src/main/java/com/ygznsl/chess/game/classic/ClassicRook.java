@@ -1,7 +1,12 @@
 package com.ygznsl.chess.game.classic;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.ygznsl.chess.game.Color;
 import com.ygznsl.chess.game.Rook;
+import com.ygznsl.chess.game.position.Direction;
+import com.ygznsl.chess.game.position.DirectionSequence;
 
 public class ClassicRook extends Rook
 {
@@ -12,63 +17,14 @@ public class ClassicRook extends Rook
     }
 
     @Override
-    protected final boolean canMoveNorth()
+    protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return true;
-    }
-
-    @Override
-    protected final boolean canMoveSouth()
-    {
-        return true;
-    }
-
-    @Override
-    protected final boolean canMoveWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected final boolean canMoveEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected final boolean canMoveNorthWest()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveNorthEast()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveSouthWest()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveSouthEast()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveLMotion()
-    {
-        return false;
-    }
-
-    @Override
-    protected final int getMoveCount()
-    {
-        return -1;
+        return Arrays.asList(
+                new DirectionSequence(-1, Direction.NORTH),
+                new DirectionSequence(-1, Direction.SOUTH),
+                new DirectionSequence(-1, Direction.WEST),
+                new DirectionSequence(-1, Direction.EAST)
+        );
     }
 
 }

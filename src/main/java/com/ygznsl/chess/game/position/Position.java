@@ -1,5 +1,7 @@
 package com.ygznsl.chess.game.position;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.ygznsl.chess.game.exception.InvalidPositionException;
@@ -183,6 +185,47 @@ public class Position implements Comparable<Position>
         return Objects.equals(HORIZONTAL_MAX, horizontal);
     }
 
+    public final List<Position> getNeighborPositions()
+    {
+        final ArrayList<Position> neighbors = new ArrayList<>(8);
+
+        try
+        {
+            if (hasNorthWest())
+                neighbors.add(getNorthWest());
+
+            if (hasNorth())
+                neighbors.add(getNorth());
+
+            if (hasNorthEast())
+                neighbors.add(getNorthEast());
+
+            if (hasEast())
+                neighbors.add(getEast());
+
+            if (hasSouthEast())
+                neighbors.add(getSouthEast());
+
+            if (hasSouth())
+                neighbors.add(getSouth());
+
+            if (hasSouthWest())
+                neighbors.add(getSouthWest());
+
+            if (hasWest())
+                neighbors.add(getWest());
+        }
+        catch (InvalidPositionException ignored)
+        {
+        }
+        finally
+        {
+            neighbors.trimToSize();
+        }
+
+        return neighbors;
+    }
+
     @Override
     public boolean equals(Object that)
     {
@@ -206,12 +249,7 @@ public class Position implements Comparable<Position>
     @Override
     public String toString()
     {
-        return "Position{" +
-                "vertical=" + getVertical() +
-                ", horizontal=" + getHorizontal() +
-                ", vertialIndex=" + getVerticalIndex() +
-                ", horizontalIndex=" + getHorizontalIndex() +
-                '}';
+        return String.format("%C%d", vertical, horizontal);
     }
 
     @Override

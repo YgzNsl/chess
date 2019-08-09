@@ -1,87 +1,35 @@
 package com.ygznsl.chess.game.classic;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import com.ygznsl.chess.game.Color;
-import com.ygznsl.chess.game.position.Direction;
 import com.ygznsl.chess.game.Pawn;
+import com.ygznsl.chess.game.position.Direction;
+import com.ygznsl.chess.game.position.DirectionSequence;
 
 public class ClassicPawn extends Pawn
 {
 
-    public ClassicPawn(Color color)
+    protected ClassicPawn(Color color)
     {
         super(color);
     }
 
     @Override
-    protected final boolean canMoveNorth()
+    protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return isWhite();
+        return Collections.singletonList(new DirectionSequence(1, Direction.NORTH));
     }
 
     @Override
-    protected final boolean canMoveSouth()
+    protected List<DirectionSequence> getThreateningDirectionSequenceList()
     {
-        return isBlack();
-    }
-
-    @Override
-    protected final boolean canMoveWest()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveEast()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean canMoveNorthWest()
-    {
-        return isWhite() && (checkEnPassant(Direction.WEST) || checkOpponentExistsInDirection(Direction.NORTH_WEST));
-    }
-
-    @Override
-    protected final boolean canMoveNorthEast()
-    {
-        return isWhite() && (checkEnPassant(Direction.EAST) || checkOpponentExistsInDirection(Direction.NORTH_EAST));
-    }
-
-    @Override
-    protected final boolean canMoveSouthWest()
-    {
-        return isBlack() && (checkEnPassant(Direction.WEST) || checkOpponentExistsInDirection(Direction.SOUTH_WEST));
-    }
-
-    @Override
-    protected final boolean canMoveSouthEast()
-    {
-        return isBlack() && (checkEnPassant(Direction.EAST) || checkOpponentExistsInDirection(Direction.SOUTH_EAST));
-    }
-
-    @Override
-    protected final boolean canMoveLMotion()
-    {
-        return false;
-    }
-
-    @Override
-    protected final int getMoveCount()
-    {
-        return firstMovePlayed ? 1 : 2;
-    }
-
-    @Override
-    protected final boolean threatensNorth()
-    {
-        return false;
-    }
-
-    @Override
-    protected final boolean threatensSouth()
-    {
-        return false;
+        return Arrays.asList(
+                new DirectionSequence(1, Direction.NORTH_EAST),
+                new DirectionSequence(1, Direction.NORTH_WEST)
+        );
     }
 
 }

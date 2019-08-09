@@ -1,7 +1,12 @@
 package com.ygznsl.chess.game.classic;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.ygznsl.chess.game.Color;
 import com.ygznsl.chess.game.Queen;
+import com.ygznsl.chess.game.position.Direction;
+import com.ygznsl.chess.game.position.DirectionSequence;
 
 public class ClassicQueen extends Queen
 {
@@ -12,63 +17,18 @@ public class ClassicQueen extends Queen
     }
 
     @Override
-    protected boolean canMoveNorth()
+    protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveSouth()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveNorthWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveNorthEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveSouthWest()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveSouthEast()
-    {
-        return true;
-    }
-
-    @Override
-    protected boolean canMoveLMotion()
-    {
-        return false;
-    }
-
-    @Override
-    protected int getMoveCount()
-    {
-        return -1;
+        return Arrays.asList(
+                new DirectionSequence(-1, Direction.NORTH),
+                new DirectionSequence(-1, Direction.SOUTH),
+                new DirectionSequence(-1, Direction.WEST),
+                new DirectionSequence(-1, Direction.EAST),
+                new DirectionSequence(-1, Direction.NORTH_WEST),
+                new DirectionSequence(-1, Direction.NORTH_EAST),
+                new DirectionSequence(-1, Direction.SOUTH_WEST),
+                new DirectionSequence(-1, Direction.SOUTH_EAST)
+        );
     }
 
 }
