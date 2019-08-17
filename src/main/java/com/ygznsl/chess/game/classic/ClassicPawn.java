@@ -1,6 +1,6 @@
 package com.ygznsl.chess.game.classic;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -8,11 +8,12 @@ import com.ygznsl.chess.game.Color;
 import com.ygznsl.chess.game.Pawn;
 import com.ygznsl.chess.game.position.Direction;
 import com.ygznsl.chess.game.position.DirectionSequence;
+import com.ygznsl.chess.game.position.Position;
 
 public class ClassicPawn extends Pawn
 {
 
-    protected ClassicPawn(Color color)
+    public ClassicPawn(Color color)
     {
         super(color);
     }
@@ -20,16 +21,32 @@ public class ClassicPawn extends Pawn
     @Override
     protected List<DirectionSequence> getMovingDirectionSequenceList()
     {
-        return Collections.singletonList(new DirectionSequence(1, Direction.NORTH));
+        return Collections.singletonList(new DirectionSequence(
+                isFirstMovePlayed() ? 1 : 2,
+                isWhite() ? Direction.NORTH : Direction.SOUTH)
+        );
     }
 
     @Override
     protected List<DirectionSequence> getThreateningDirectionSequenceList()
     {
-        return Arrays.asList(
-                new DirectionSequence(1, Direction.NORTH_EAST),
-                new DirectionSequence(1, Direction.NORTH_WEST)
-        );
+        final ArrayList<DirectionSequence> list = new ArrayList<>(2);
+        final Position currentPosition = getPosition();
+
+        final Direction westCorner = isWhite() ? Direction.NORTH_WEST : Direction.SOUTH_WEST;
+        final Direction eastCorner = isWhite() ? Direction.NORTH_EAST : Direction.SOUTH_EAST;
+
+        if (hasOpponentOnDirection(currentPosition, westCorner))
+        {
+            list.add(new DirectionSequence(1, westCorner));
+        }
+
+        if (hasOpponentOnDirection(currentPosition, eastCorner))
+        {
+            list.add(new DirectionSequence(1, eastCorner));
+        }
+
+        return list;
     }
 
 }

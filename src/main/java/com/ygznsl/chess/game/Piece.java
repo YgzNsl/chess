@@ -64,6 +64,11 @@ public abstract class Piece
         return square;
     }
 
+    public final Board getBoard()
+    {
+        return square.getBoard();
+    }
+
     protected void setSquare(Square square)
     {
         this.square = square;
@@ -75,6 +80,22 @@ public abstract class Piece
                 .ofNullable(square)
                 .map(Square::getPosition)
                 .orElse(null);
+    }
+
+    protected final boolean hasOpponentOnDirection(Position position, Direction direction)
+    {
+        if (!hasPositionOnDirection(position, direction))
+            return false;
+
+        final Position targetPosition = getPositionOnDirection(position, direction);
+        if (isNull(targetPosition))
+            return false;
+
+        final Square targetSquare = getBoard().getSquare(targetPosition);
+        return targetSquare.isOccupied() && targetSquare
+                .getOccupant()
+                .getColor()
+                .isOpponentOf(color);
     }
 
     protected final boolean hasPositionOnDirection(Position position, Direction direction)
@@ -195,11 +216,11 @@ public abstract class Piece
 
         final List<DirectionSequence> directionSequenceList = getMovingDirectionSequenceList();
         final LinkedList<Path> paths = new LinkedList<>();
-        final Position currenPosition = getPosition();
+        final Position currentPosition = getPosition();
 
         for (DirectionSequence directionSequence : directionSequenceList)
         {
-            final Path path = getPathFromDirectionSequence(currenPosition, directionSequence);
+            final Path path = getPathFromDirectionSequence(currentPosition, directionSequence);
 
             if (nonNull(path))
                 paths.add(path);

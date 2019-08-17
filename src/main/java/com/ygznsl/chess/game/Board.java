@@ -78,8 +78,8 @@ public abstract class Board
 
                     if (nonNull(previous))
                     {
-                        previous = null;
                         path.setBlockedBy(previous);
+                        previous = null;
                         break;
                     }
 
