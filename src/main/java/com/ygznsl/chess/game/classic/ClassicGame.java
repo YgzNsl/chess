@@ -9,6 +9,7 @@ public class ClassicGame extends Game
 
     public ClassicGame()
     {
+        super();
     }
 
     @Override
